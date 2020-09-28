@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navgraph"
+    app:startDestination="@id/mainBookFragment">
+    <fragment
+        android:id="@+id/mainBookFragment"
+        android:name="com.example.MyBook.Fragments.MainBookFragment"
+        android:label="fragment_main_book"
+        tools:layout="@layout/fragment_main_book" >
+        <action
+            android:id="@+id/action_mainBookFragment_to_mainBookDetailContainer"
+            app:destination="@id/mainBookDetailContainer" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainBookDetailSynopsis"
+        android:name="com.example.MyBook.Fragments.MainBookDetailSynopsis"
+        android:label="fragment_main_book_detail_synopsis"
+        tools:layout="@layout/fragment_main_book_detail_synopsis" >
+        <argument
+            android:name="selectedBook"
+            app:argType="com.example.MyBook.Clases.Book" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainBookDetailOther"
+        android:name="com.example.MyBook.Fragments.MainBookDetailOther"
+        android:label="fragment_main_book_detail_other"
+        tools:layout="@layout/fragment_main_book_detail_other" >
+        <argument
+            android:name="selectedBook"
+            app:argType="com.example.MyBook.Clases.Book" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainBookDetailContainer"
+        android:name="com.example.MyBook.Fragments.MainBookDetailContainer"
+        android:label="MainBookDetailContainer" >
+        <argument
+            android:name="SelectedBook"
+            app:argType="com.example.MyBook.Clases.Book" />
+        <action
+            android:id="@+id/action_mainBookDetailContainer_to_mainBookFragment"
+            app:destination="@id/mainBookFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginRecoveryFragment2"
+        android:name="com.example.MyBook.Fragments.LoginRecoveryFragment"
+        android:label="fragment_login_recovery"
+        tools:layout="@layout/fragment_login_recovery" />
+</navigation>

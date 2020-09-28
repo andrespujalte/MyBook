@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">Book</string>
+    //login fragment
+    <string name="bt_next_Español">Siguiente</string>string>
+    <string name="bt_create_Español">Crear cuenta</string>string>
+    <string name="bt_recover_Español">¿Ha olvidado su contraseña?</string>string>
+    <string name="tv_user_Español">Usuario:</string>string>
+    <string name="sb_login_error_Español">Usuario incorrecto</string>string>
+    <string name="sb_login_password_error_Español">Contraseña incorrecta</string>string>
+    <string name="sb_recover_error_Español">El usuario no existe!</string>string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="tv_login_password_password_Español">Contraseña:</string>
+    <string name="et_login_password_Español">Ingrese su contraseña aqui</string>
+
+    <string name="bt_ingresar_Español">Ingresar</string>
+
+    <string name="bt_login_password_back_Español">Volver</string>
+    <string name="bt_login_password_login_Español">Ingresar</string>
+    <string name="tv_login_newuser_userid_Español">User ID:</string>
+    <string name="tv_login_newuser_firstname_Español">Nombre:</string>
+    <string name="tv_login_newuser_lastname_Español">Apellido:</string>
+    <string name="tv_login_newuser_email_Español">Email:</string>
+    <string name="tv_login_newuser_password_Español">Contraseña:</string>
+    <string name="tv_login_newuser_passwordconfirm_Español">Confirmar Contraseña:</string>
+    <string name="et_login_newuser_userid_Español">RobertoID</string>
+    <string name="et_login_newuser_firstname_Español">Roberto</string>
+    <string name="et_login_newuser_lasttname_Español">Gonzales</string>
+    <string name="et_login_newuser_email_Español">RGonzales@gmail.com</string>
+    <string name="et_login_newuser_password_Español"></string>
+    <string name="et_login_newuser_passwordconfirm_Español"></string>
+    <string name="bt_login_newuser_cancel_Español">Cancelar</string>
+    <string name="bt_login_newuser_add_Español">Agregar</string>
+    <string name="book">Book</string>
+
+    <string name="tv_others_bookname">Titulo:</string>
+    <string name="et_others_bookname"></string>
+    <string name="tv_others_authorname">Autor:</string>
+    <string name="tv_others_publisher">Editorial:</string>
+    <string name="et_others_publisher"></string>
+    <string name="tv_others_isbn">ISBN:</string>
+    <string name="tv_others_category">Categoria:</string>
+    <string name="et_others_isbn"></string>
+    <string name="tv_others_url">URL:</string>
+    <string name="et_others_url"></string>
+    <string name="bt_others_edit">Editar Info</string>
+    <string name="bt_others_edit_Aceptar">Aceptar Cambios</string>
+    <string name ="Categoria_Literatura_Adolencete">Literatura para adolencete</string>
+    <string name ="Categoria_Literatura_Niños">Literatura para niño</string>
+    <string name ="Categoria_Novelas_Romanticas">Novelas romantica</string>
+    <string name ="Categoria_Novelas_Terror">Novelas de Terror</string>
+    <string name ="Categoria_Novelas_Policiales">Novelas policiales</string>
+    <string name ="Categoria_Divulgacion_Cientifica">Divulgacion Cientifica</string>
+    <string name ="Categoria_Ensayos">Ensayos</string>
+    <string name ="Categoria_Politica">Politica</string>
+    <string name ="Categoria_Universitarios">Universitarios</string>
+    <string name="tv_other_edit">Editando</string>
+    <string name="tv_other_edit_no"></string>
+</resources>

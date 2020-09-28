@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_navgraph"
+    app:startDestination="@id/loginUserFragment">
+
+    <fragment
+        android:id="@+id/loginNewUserFragment"
+        android:name="com.example.MyBook.Fragments.LoginNewUserFragment"
+        android:label="fragment_login_new_user"
+        tools:layout="@layout/fragment_login_new_user" >
+        <action
+            android:id="@+id/action_loginNewUserFragment_to_loginUserFragment"
+            app:destination="@id/loginUserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginPasswordFragment"
+        android:name="com.example.MyBook.Fragments.LoginPasswordFragment"
+        android:label="fragment_login_password"
+        tools:layout="@layout/fragment_login_password" >
+        <action
+            android:id="@+id/action_loginPasswordFragment_to_main_navgraph"
+            app:destination="@id/main_navgraph" />
+        <action
+            android:id="@+id/action_loginPasswordFragment_to_loginUserFragment"
+            app:destination="@id/loginUserFragment" />
+        <argument
+            android:name="password"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginRecoveryFragment"
+        android:name="com.example.MyBook.Fragments.LoginRecoveryFragment"
+        android:label="fragment_login_recovery"
+        tools:layout="@layout/fragment_login_recovery" >
+        <argument
+            android:name="user"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginUserFragment"
+        android:name="com.example.MyBook.Fragments.LoginUserInitFragment"
+        android:label="fragment_login_user"
+        tools:layout="@layout/fragment_login_user" >
+        <action
+            android:id="@+id/action_loginUserFragment_to_loginPasswordFragment"
+            app:destination="@id/loginPasswordFragment" />
+        <action
+            android:id="@+id/action_loginUserFragment_to_loginNewUserFragment"
+            app:destination="@id/loginNewUserFragment" />
+        <action
+            android:id="@+id/action_loginUserFragment_to_loginRecoveryFragment"
+            app:destination="@id/loginRecoveryFragment" />
+    </fragment>
+    <include app:graph="@navigation/main_navgraph" />
+</navigation>
