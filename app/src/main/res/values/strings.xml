@@ -45,15 +45,15 @@
     <string name="et_others_url"></string>
     <string name="bt_others_edit">Editar Info</string>
     <string name="bt_others_edit_Aceptar">Aceptar Cambios</string>
-    <string name ="Categoria_Literatura_Adolencete">Literatura para adolencete</string>
-    <string name ="Categoria_Literatura_Niños">Literatura para niño</string>
-    <string name ="Categoria_Novelas_Romanticas">Novelas romantica</string>
-    <string name ="Categoria_Novelas_Terror">Novelas de Terror</string>
-    <string name ="Categoria_Novelas_Policiales">Novelas policiales</string>
-    <string name ="Categoria_Divulgacion_Cientifica">Divulgacion Cientifica</string>
-    <string name ="Categoria_Ensayos">Ensayos</string>
-    <string name ="Categoria_Politica">Politica</string>
-    <string name ="Categoria_Universitarios">Universitarios</string>
+    <string name="Categoria_Literatura_Adolencete">Literatura para adolencete</string>
+    <string name="Categoria_Literatura_Niños">Literatura para niño</string>
+    <string name="Categoria_Novelas_Romanticas">Novelas romantica</string>
+    <string name="Categoria_Novelas_Terror">Novelas de Terror</string>
+    <string name="Categoria_Novelas_Policiales">Novelas policiales</string>
+    <string name="Categoria_Divulgacion_Cientifica">Divulgacion Cientifica</string>
+    <string name="Categoria_Ensayos">Ensayos</string>
+    <string name="Categoria_Politica">Politica</string>
+    <string name="Categoria_Universitarios">Universitarios</string>
     <string name="tv_other_edit">Editando</string>
     <string name="tv_other_edit_no"></string>
 </resources>
