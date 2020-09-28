@@ -1,10 +1,8 @@
 package com.example.MyBook.Fragments
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 
@@ -43,6 +41,7 @@ class MainBookFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         v = inflater.inflate(R.layout.fragment_main_book , container, false)
+        setHasOptionsMenu(true)
         rv_books = v.findViewById(R.id.rv_books)
         books = ArrayList<Book>()
         db = appDatabase.getAppDataBase(v.context)
@@ -54,6 +53,7 @@ class MainBookFragment : Fragment() {
         return v
     }
 
+
     override fun onStart() {
         super.onStart()
         rv_books.setHasFixedSize(true)
@@ -62,6 +62,23 @@ class MainBookFragment : Fragment() {
         bookListAdapter = BooksListAdapter(books){position -> onItemClick(position)}
         rv_books.adapter = bookListAdapter
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.toolbar_main_book,menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val id = when(item.itemId) {
+
+            R.id.action_add -> Snackbar.make(v, "add", Snackbar.LENGTH_SHORT).show()
+
+            R.id.action_fav -> Snackbar.make(v, "fav", Snackbar.LENGTH_SHORT).show()
+
+            else -> ""
+        }
+        return super.onOptionsItemSelected(item)
     }
     fun onItemClick(position : Int){
 

@@ -43,8 +43,13 @@
             app:destination="@id/mainBookFragment" />
     </fragment>
     <fragment
-        android:id="@+id/loginRecoveryFragment2"
-        android:name="com.example.MyBook.Fragments.LoginRecoveryFragment"
-        android:label="fragment_login_recovery"
-        tools:layout="@layout/fragment_login_recovery" />
+        android:id="@+id/mainBookNewFragment"
+        android:name="com.example.MyBook.Fragments.MainBookNewFragment"
+        android:label="fragment_main_book_new"
+        tools:layout="@layout/fragment_main_book_new" />
+    <fragment
+        android:id="@+id/mainBookUserFragment"
+        android:name="com.example.MyBook.Fragments.MainBookUserFragment"
+        android:label="fragment_main_book_user"
+        tools:layout="@layout/fragment_main_book_user" />
 </navigation>

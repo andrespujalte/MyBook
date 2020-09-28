@@ -25,12 +25,34 @@
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="5dp"
         app:defaultNavHost="true"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guideline3"
         app:navGraph="@navigation/main_navgraph" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_main_book"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/design_default_color_secondary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/button_main_book"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:backgroundTint="@color/design_default_color_secondary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        app:menu="@menu/button_main_book" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

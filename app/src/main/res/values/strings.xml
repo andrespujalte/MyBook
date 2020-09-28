@@ -32,6 +32,7 @@
     <string name="bt_login_newuser_cancel_Español">Cancelar</string>
     <string name="bt_login_newuser_add_Español">Agregar</string>
     <string name="book">Book</string>
+    <string name="Acount">Config</string>
 
     <string name="tv_others_bookname">Titulo:</string>
     <string name="et_others_bookname"></string>
