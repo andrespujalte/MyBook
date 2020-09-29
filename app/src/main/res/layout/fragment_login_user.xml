@@ -5,7 +5,6 @@
     android:id="@+id/cl_login_newuser"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_alignWithParentIfMissing="true"
     android:visibility="visible"
     tools:context=".Fragments.LoginUserInitFragment">
 
