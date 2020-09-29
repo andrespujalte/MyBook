@@ -72,6 +72,11 @@ class MainBookFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = when(item.itemId) {
+            R.id.action_UserSetting -> {
+                val actionMainBookFragmentToSettingsActivity = MainBookFragmentDirections.actionMainBookFragmentToSettingsActivity()
+                (v.findNavController().navigate(actionMainBookFragmentToSettingsActivity))
+
+            }
             R.id.action_All -> {
                 books = bookDao?.loadAllBooks()  as MutableList<Book>
                 Snackbar.make(v, "Ver todo", Snackbar.LENGTH_SHORT).show()

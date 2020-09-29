@@ -15,6 +15,9 @@
         <action
             android:id="@+id/action_mainBookFragment_to_mainBookNewFragment"
             app:destination="@id/mainBookNewFragment" />
+        <action
+            android:id="@+id/action_mainBookFragment_to_settingsActivity"
+            app:destination="@id/settingsActivity" />
     </fragment>
     <fragment
         android:id="@+id/mainBookDetailSynopsis"
@@ -54,9 +57,8 @@
             android:id="@+id/action_mainBookNewFragment_to_mainBookFragment"
             app:destination="@id/mainBookFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/mainBookUserFragment"
-        android:name="com.example.MyBook.Fragments.MainBookUserFragment"
-        android:label="fragment_main_book_user"
-        tools:layout="@layout/fragment_main_book_user" />
+    <activity
+        android:id="@+id/settingsActivity"
+        android:name="com.example.MyBook.Activities.SettingsActivity"
+        android:label="SettingsActivity" />
 </navigation>
