@@ -18,6 +18,9 @@
         <action
             android:id="@+id/action_mainBookFragment_to_settingsActivity"
             app:destination="@id/settingsActivity" />
+        <action
+            android:id="@+id/action_mainBookFragment_to_mainBookDeleteFragment"
+            app:destination="@id/mainBookDeleteFragment" />
     </fragment>
     <fragment
         android:id="@+id/mainBookDetailSynopsis"
@@ -61,4 +64,16 @@
         android:id="@+id/settingsActivity"
         android:name="com.example.MyBook.Activities.SettingsActivity"
         android:label="SettingsActivity" />
+    <fragment
+        android:id="@+id/mainBookDeleteFragment"
+        android:name="com.example.MyBook.Fragments.MainBookDeleteFragment"
+        android:label="fragment_main_book_delete"
+        tools:layout="@layout/fragment_main_book_delete" >
+        <action
+            android:id="@+id/action_mainBookDeleteFragment_to_mainBookFragment"
+            app:destination="@id/mainBookFragment" />
+        <argument
+            android:name="SelectedBook"
+            app:argType="com.example.MyBook.Clases.Book" />
+    </fragment>
 </navigation>

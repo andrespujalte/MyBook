@@ -138,7 +138,8 @@ class MainBookFragment : Fragment() {
         (v.findNavController().navigate(actionMainBookFragmentToMainBookDetailContainer))
     }
     fun onLongItemClick(position: Int):Boolean{
-
+        val actionMainBookFragmentToMainBookDeleteFragment = MainBookFragmentDirections.actionMainBookFragmentToMainBookDeleteFragment(books[position])
+        (v.findNavController().navigate(actionMainBookFragmentToMainBookDeleteFragment))
         return true
     }
     fun onFirstLoginCreateBooksItems(){
