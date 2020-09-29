@@ -83,7 +83,7 @@ class MainBookDetailSynopsis : Fragment() {
                 editstate = getString(R.string.tv_other_edit_no)
                 selectedBook.synopsys = editText.text.toString()
                 bookDao?.updateBook(selectedBook)
-                RoomExplorer.show(context, appDatabase::class.java, "BooksDB")
+
             }
 
         }

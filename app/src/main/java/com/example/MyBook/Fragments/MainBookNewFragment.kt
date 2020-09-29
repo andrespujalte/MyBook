@@ -41,6 +41,8 @@ class MainBookNewFragment : Fragment() {
     lateinit var fbotton_add: FloatingActionButton
     lateinit var fbotton_back: FloatingActionButton
     lateinit var book : Book
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {

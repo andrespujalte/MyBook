@@ -2,6 +2,8 @@ package com.example.MyBook.Fragments
 
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.preference.PreferenceManager
@@ -62,7 +64,8 @@ class MainBookFragment : Fragment() {
         rv_books.setHasFixedSize(true)
         linearLayoutManager =  LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
         rv_books.layoutManager = linearLayoutManager
-        bookListAdapter = BooksListAdapter(books){position -> onItemClick(position)}
+        //bookListAdapter = BooksListAdapter(books){position -> onItemClick(position)}
+        bookListAdapter = BooksListAdapter(books,{position -> onItemClick(position)},{position->onLongItemClick(position)})
         rv_books.adapter = bookListAdapter
 
         fbt_main_book_new.setOnClickListener{
@@ -122,13 +125,17 @@ class MainBookFragment : Fragment() {
 
             else -> ""
         }
-        bookListAdapter = BooksListAdapter(books){position -> onItemClick(position)}
+        bookListAdapter = BooksListAdapter(books,{position -> onItemClick(position)},{position->onLongItemClick(position)})
         rv_books.adapter = bookListAdapter
         return super.onOptionsItemSelected(item)
     }
     fun onItemClick(position : Int){
         val actionMainBookFragmentToMainBookDetailContainer = MainBookFragmentDirections.actionMainBookFragmentToMainBookDetailContainer(books[position])
         (v.findNavController().navigate(actionMainBookFragmentToMainBookDetailContainer))
+    }
+    fun onLongItemClick(position: Int):Boolean{
+
+        return true
     }
     fun onFirstLoginCreateBooksItems(){
         book = Book(1,"La Sangre Manda","King Stephen"," PLAZA & JANES EDITORES","9789506445386",getString(R.string.Categoria_Novelas_Terror),"https://contentv2.tap-commerce.com/cover/large/9789506445386_1.jpg?id_com=1113","Cuatro novelas cortas de Stephen King sobre las fuerzas ocultas que nos acechan. En esta colección única nos ofrece un impactante noir paranormal, protagonizado por la carismática Holly Gibney, y tres relatos más que ponen de manifiesto el incomparable talento, la imaginación sin par y la diversidad de registros de este legendario narrador.")

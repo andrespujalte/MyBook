@@ -12,7 +12,7 @@ import com.example.MyBook.R
 
 import com.bumptech.glide.Glide
 
-class BooksListAdapter(private var bookList: MutableList<Book>, val onItemclick: (Int) -> Unit) : RecyclerView.Adapter<BooksListAdapter.BookHolder>()
+class BooksListAdapter(private var bookList: MutableList<Book>, val onItemclick: (Int) -> Unit, val onLongItemClick: (Int)->Boolean) : RecyclerView.Adapter<BooksListAdapter.BookHolder>()
 {
 
 
@@ -28,10 +28,8 @@ class BooksListAdapter(private var bookList: MutableList<Book>, val onItemclick:
     override fun onBindViewHolder(holder: BookHolder, position: Int) {
         holder.setName(bookList[position].bookname)
         holder.setImg((bookList[position].imageurl))
-        holder.getCardLayout()
-            .setOnClickListener{
-            onItemclick(position)
-        }
+        holder.getCardLayout().setOnClickListener{ onItemclick(position)}
+        holder.getCardLayout().setOnLongClickListener(){onLongItemClick(position)}
     }
 
 
