@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
     <ListPreference
-        app:defaultValue="reply"
+        app:defaultValue="All"
         app:entries="@array/cat_entries"
         app:entryValues="@array/cat_values"
-        app:key="reply"
+        app:key="category"
         app:title="@string/category_title"
         app:useSimpleSummaryProvider="true" />
 </PreferenceScreen>

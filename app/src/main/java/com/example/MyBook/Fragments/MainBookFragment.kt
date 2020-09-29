@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.MyBook.Adaptadores.BooksListAdapter
@@ -57,19 +58,25 @@ class MainBookFragment : Fragment() {
         rv_books.layoutManager = linearLayoutManager
         bookListAdapter = BooksListAdapter(books){position -> onItemClick(position)}
         rv_books.adapter = bookListAdapter
+        val prefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
+        var preferencias : String = prefs.getString("category","").toString()
+        if(preferencias != "" && preferencias != "All"){
+            books = bookDao!!.loadBookbyCategory(preferencias) as MutableList<Book>
+        }
+        else{books = bookDao!!.loadAllBooks() as MutableList<Book>}
+
+
         fbt_main_book_new.setOnClickListener{
             val actionMainBookFragmentToMainBookNewFragment = MainBookFragmentDirections.actionMainBookFragmentToMainBookNewFragment()
             (v.findNavController().navigate(actionMainBookFragmentToMainBookNewFragment))
         }
 
     }
-
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         menu.clear();
         inflater.inflate(R.menu.toolbar_main_book,menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = when(item.itemId) {
             R.id.action_UserSetting -> {
@@ -120,8 +127,6 @@ class MainBookFragment : Fragment() {
         rv_books.adapter = bookListAdapter
         return super.onOptionsItemSelected(item)
     }
-
-
     fun onItemClick(position : Int){
         val actionMainBookFragmentToMainBookDetailContainer = MainBookFragmentDirections.actionMainBookFragmentToMainBookDetailContainer(books[position])
         (v.findNavController().navigate(actionMainBookFragmentToMainBookDetailContainer))
