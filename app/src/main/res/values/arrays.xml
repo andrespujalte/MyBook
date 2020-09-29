@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-
     <string-array name="cat_entries">
+        <item>All</item>
+        <item>Literatura Adolencete</item>
+        <item>Literatura Niños</item>
+        <item>Novelas Romantica</item>
+        <item>Novelas Terror</item>
+        <item>Novelas Policiales</item>
+        <item>Divulgacion Cientifica</item>
+        <item>Ensayos</item>
+        <item>Politica</item>
+        <item>Universitarios</item>
+    </string-array>
+
+    <string-array name="cat_values">
         <item>All</item>
         <item>Literatura para adolencete</item>
         <item>Literatura para niño</item>
@@ -15,16 +27,5 @@
         <item>Universitarios</item>
     </string-array>
 
-    <string-array name="cat_values">
-        <item>All</item>
-        <item>Literatura_Adolencete</item>
-        <item>Literatura_Niños</item>
-        <item>Literatura_Adolencete</item>
-        <item>Novelas_Terror</item>
-        <item>Novelas_Policiales</item>
-        <item>Divulgacion_Cientifica</item>
-        <item>Ensayos</item>
-        <item>Politica</item>
-        <item>Universitarios</item>
-    </string-array>
+
 </resources>

@@ -50,21 +50,20 @@ class MainBookFragment : Fragment() {
         return v
     }
 
-
     override fun onStart() {
         super.onStart()
-        rv_books.setHasFixedSize(true)
-        linearLayoutManager =  LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
-        rv_books.layoutManager = linearLayoutManager
-        bookListAdapter = BooksListAdapter(books){position -> onItemClick(position)}
-        rv_books.adapter = bookListAdapter
+
         val prefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
         var preferencias : String = prefs.getString("category","").toString()
         if(preferencias != "" && preferencias != "All"){
             books = bookDao!!.loadBookbyCategory(preferencias) as MutableList<Book>
         }
         else{books = bookDao!!.loadAllBooks() as MutableList<Book>}
-
+        rv_books.setHasFixedSize(true)
+        linearLayoutManager =  LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
+        rv_books.layoutManager = linearLayoutManager
+        bookListAdapter = BooksListAdapter(books){position -> onItemClick(position)}
+        rv_books.adapter = bookListAdapter
 
         fbt_main_book_new.setOnClickListener{
             val actionMainBookFragmentToMainBookNewFragment = MainBookFragmentDirections.actionMainBookFragmentToMainBookNewFragment()
