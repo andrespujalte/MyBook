@@ -3,15 +3,44 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_add"
-        android:icon="@drawable/ic_book"
-        android:title="add"
-        app:showAsAction="ifRoom" />
-
+        android:id="@+id/action_All"
+        android:title="Todas"
+        app:showAsAction="never" />
     <item
-        android:id="@+id/action_fav"
-        android:icon="@drawable/ic_myaccount"
-        android:title="fav"
+        android:id="@+id/action_literatura_adolecente"
+        android:title="@string/Categoria_Literatura_Adolencete"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_Terror"
+        android:title="@string/Categoria_Novelas_Terror"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_divulgacion"
+        android:title="@string/Categoria_Divulgacion_Cientifica"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_ensayos"
+        android:title="@string/Categoria_Ensayos"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_niños"
+        android:title="@string/Categoria_Literatura_Niños"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_policiales"
+        android:title="@string/Categoria_Novelas_Policiales"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_romanticas"
+        android:title="@string/Categoria_Novelas_Romanticas"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_politica"
+        android:title="@string/Categoria_Politica"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_Universitarios"
+        android:title="@string/Categoria_Universitarios"
         app:showAsAction="never" />
 
 </menu>

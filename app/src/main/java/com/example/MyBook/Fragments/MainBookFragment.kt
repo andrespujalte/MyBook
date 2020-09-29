@@ -5,25 +5,21 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-
 import androidx.recyclerview.widget.RecyclerView
 import com.example.MyBook.Adaptadores.BooksListAdapter
 import com.example.MyBook.Clases.Book
-import com.example.MyBook.Clases.User
 import com.example.MyBook.Database.appDatabase
 import com.example.MyBook.Database.bookDao
-import com.example.MyBook.Database.userDao
 import com.example.MyBook.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
-
-
-
 
 class MainBookFragment : Fragment() {
     lateinit var v : View
     lateinit var rv_books : RecyclerView
     lateinit var books  : MutableList<Book>
     lateinit var book: Book
+    lateinit var fbt_main_book_new : FloatingActionButton
     private var db : appDatabase? = null
     private var bookDao : bookDao? = null
 
@@ -41,12 +37,12 @@ class MainBookFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         v = inflater.inflate(R.layout.fragment_main_book , container, false)
+        fbt_main_book_new = v.findViewById(R.id.fbt_main_book_new)
         setHasOptionsMenu(true)
         rv_books = v.findViewById(R.id.rv_books)
         books = ArrayList<Book>()
         db = appDatabase.getAppDataBase(v.context)
         bookDao = db?.bookDao()
-
         if(bookDao?.loadAllBooks()?.isNullOrEmpty()!!)
             onFirstLoginCreateBooksItems()
         books = bookDao!!.loadAllBooks() as MutableList<Book>
@@ -61,27 +57,67 @@ class MainBookFragment : Fragment() {
         rv_books.layoutManager = linearLayoutManager
         bookListAdapter = BooksListAdapter(books){position -> onItemClick(position)}
         rv_books.adapter = bookListAdapter
+        fbt_main_book_new.setOnClickListener{
+            val actionMainBookFragmentToMainBookNewFragment = MainBookFragmentDirections.actionMainBookFragmentToMainBookNewFragment()
+            (v.findNavController().navigate(actionMainBookFragmentToMainBookNewFragment))
+        }
 
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        menu.clear();
         inflater.inflate(R.menu.toolbar_main_book,menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = when(item.itemId) {
-
-            R.id.action_add -> Snackbar.make(v, "add", Snackbar.LENGTH_SHORT).show()
-
-            R.id.action_fav -> Snackbar.make(v, "fav", Snackbar.LENGTH_SHORT).show()
+            R.id.action_All -> {
+                books = bookDao?.loadAllBooks()  as MutableList<Book>
+                Snackbar.make(v, "Ver todo", Snackbar.LENGTH_SHORT).show()
+            }
+            R.id.action_literatura_adolecente -> {
+                books = bookDao?.loadBookbyCategory(getString(R.string.Categoria_Literatura_Adolencete))  as MutableList<Book>
+                Snackbar.make(v, getString(R.string.Categoria_Literatura_Adolencete), Snackbar.LENGTH_SHORT).show()
+            }
+            R.id.action_Terror -> {
+                books = bookDao?.loadBookbyCategory(getString(R.string.Categoria_Novelas_Terror))  as MutableList<Book>
+                Snackbar.make(v, getString(R.string.Categoria_Novelas_Terror), Snackbar.LENGTH_SHORT).show()
+            }
+            R.id.action_niños -> {
+                books = bookDao?.loadBookbyCategory(getString(R.string.Categoria_Literatura_Niños))  as MutableList<Book>
+                Snackbar.make(v, getString(R.string.Categoria_Literatura_Niños), Snackbar.LENGTH_SHORT).show()
+            }
+            R.id.action_Universitarios -> {
+                books = bookDao?.loadBookbyCategory(getString(R.string.Categoria_Universitarios))  as MutableList<Book>
+                Snackbar.make(v, getString(R.string.Categoria_Universitarios), Snackbar.LENGTH_SHORT).show()
+            }
+            R.id.action_divulgacion -> {
+                books = bookDao?.loadBookbyCategory(getString(R.string.Categoria_Divulgacion_Cientifica))  as MutableList<Book>
+                Snackbar.make(v, getString(R.string.Categoria_Divulgacion_Cientifica), Snackbar.LENGTH_SHORT).show()
+            }
+            R.id.action_ensayos -> {
+                books = bookDao?.loadBookbyCategory(getString(R.string.Categoria_Ensayos))  as MutableList<Book>
+                Snackbar.make(v, getString(R.string.Categoria_Ensayos), Snackbar.LENGTH_SHORT).show()
+            }
+            R.id.action_policiales -> {
+                books = bookDao?.loadBookbyCategory(getString(R.string.Categoria_Novelas_Policiales))  as MutableList<Book>
+                Snackbar.make(v, getString(R.string.Categoria_Novelas_Policiales), Snackbar.LENGTH_SHORT).show()
+            }
+            R.id.action_romanticas -> {
+                books = bookDao?.loadBookbyCategory(getString(R.string.Categoria_Novelas_Romanticas))  as MutableList<Book>
+                Snackbar.make(v, getString(R.string.Categoria_Novelas_Romanticas), Snackbar.LENGTH_SHORT).show()
+            }
 
             else -> ""
         }
+        bookListAdapter = BooksListAdapter(books){position -> onItemClick(position)}
+        rv_books.adapter = bookListAdapter
         return super.onOptionsItemSelected(item)
     }
-    fun onItemClick(position : Int){
 
+
+    fun onItemClick(position : Int){
         val actionMainBookFragmentToMainBookDetailContainer = MainBookFragmentDirections.actionMainBookFragmentToMainBookDetailContainer(books[position])
         (v.findNavController().navigate(actionMainBookFragmentToMainBookDetailContainer))
     }

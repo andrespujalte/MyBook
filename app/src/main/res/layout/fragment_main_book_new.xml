@@ -1,14 +1,190 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragments.MainBookNewFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/tv_main_book_new_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_others_bookname"
+        app:layout_constraintBottom_toBottomOf="@+id/et_main_book_new_titulo"
+        app:layout_constraintEnd_toStartOf="@+id/et_main_book_new_titulo"
+        app:layout_constraintStart_toStartOf="@+id/guideline17"
+        app:layout_constraintTop_toTopOf="@+id/et_main_book_new_titulo" />
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/et_main_book_new_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/guideline16"
+        app:layout_constraintTop_toTopOf="@+id/guideline15" />
+
+    <TextView
+        android:id="@+id/tv_main_book_new_autor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_others_authorname"
+        app:layout_constraintBottom_toBottomOf="@+id/et_main_book_new_autor"
+        app:layout_constraintEnd_toStartOf="@+id/et_main_book_new_autor"
+        app:layout_constraintStart_toStartOf="@+id/guideline17"
+        app:layout_constraintTop_toTopOf="@+id/et_main_book_new_autor" />
+
+    <EditText
+        android:id="@+id/et_main_book_new_autor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/guideline16"
+        app:layout_constraintTop_toBottomOf="@+id/et_main_book_new_titulo" />
+
+    <TextView
+        android:id="@+id/tv_main_book_new_sinopsis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sinopsis:"
+        app:layout_constraintBottom_toBottomOf="@+id/et_main_book_new_sinopsis"
+        app:layout_constraintEnd_toStartOf="@+id/et_main_book_new_sinopsis"
+        app:layout_constraintStart_toStartOf="@+id/guideline17"
+        app:layout_constraintTop_toTopOf="@+id/et_main_book_new_sinopsis" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="331dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <EditText
+        android:id="@+id/et_main_book_new_editorial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/guideline16"
+        app:layout_constraintTop_toBottomOf="@+id/et_main_book_new_autor" />
+
+    <EditText
+        android:id="@+id/et_main_book_new_isbn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/guideline16"
+        app:layout_constraintTop_toBottomOf="@+id/et_main_book_new_editorial" />
+
+    <TextView
+        android:id="@+id/tv_main_book_new_url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="URL:"
+        app:layout_constraintBottom_toBottomOf="@+id/et_main_book_new_url"
+        app:layout_constraintEnd_toStartOf="@+id/et_main_book_new_url"
+        app:layout_constraintStart_toStartOf="@+id/guideline17"
+        app:layout_constraintTop_toTopOf="@+id/et_main_book_new_url" />
+
+    <EditText
+        android:id="@+id/et_main_book_new_url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/guideline16"
+        app:layout_constraintTop_toBottomOf="@+id/et_main_book_new_isbn" />
+
+    <EditText
+        android:id="@+id/et_main_book_new_sinopsis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/guideline16"
+        app:layout_constraintTop_toBottomOf="@+id/et_main_book_new_url" />
+
+    <TextView
+        android:id="@+id/tv_main_book_categoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Categoria:"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_main_book_new"
+        app:layout_constraintEnd_toStartOf="@+id/spinner_main_book_new"
+        app:layout_constraintStart_toStartOf="@+id/guideline17"
+        app:layout_constraintTop_toTopOf="@+id/spinner_main_book_new" />
+
+    <Spinner
+        android:id="@+id/spinner_main_book_new"
+        android:layout_width="208dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline16"
+        app:layout_constraintStart_toStartOf="@+id/et_main_book_new_sinopsis"
+        app:layout_constraintTop_toBottomOf="@+id/et_main_book_new_sinopsis" />
+
+    <TextView
+        android:id="@+id/tv_main_book_new_editorial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Editorial:"
+        app:layout_constraintBottom_toBottomOf="@+id/et_main_book_new_editorial"
+        app:layout_constraintEnd_toStartOf="@+id/et_main_book_new_editorial"
+        app:layout_constraintStart_toStartOf="@+id/guideline17"
+        app:layout_constraintTop_toTopOf="@+id/et_main_book_new_editorial" />
+
+    <TextView
+        android:id="@+id/tv_main_book_new_isbn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ISBN:"
+        app:layout_constraintBottom_toBottomOf="@+id/et_main_book_new_isbn"
+        app:layout_constraintEnd_toStartOf="@+id/et_main_book_new_isbn"
+        app:layout_constraintStart_toStartOf="@+id/guideline17"
+        app:layout_constraintTop_toTopOf="@+id/et_main_book_new_isbn" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fbt_main_book_new_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:clickable="true"
+        android:src="@android:drawable/ic_delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fbt_main_book_new_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:clickable="true"
+        android:src="@android:drawable/ic_input_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_mainBookFragment_to_mainBookDetailContainer"
             app:destination="@id/mainBookDetailContainer" />
+        <action
+            android:id="@+id/action_mainBookFragment_to_mainBookNewFragment"
+            app:destination="@id/mainBookNewFragment" />
     </fragment>
     <fragment
         android:id="@+id/mainBookDetailSynopsis"
@@ -46,7 +49,11 @@
         android:id="@+id/mainBookNewFragment"
         android:name="com.example.MyBook.Fragments.MainBookNewFragment"
         android:label="fragment_main_book_new"
-        tools:layout="@layout/fragment_main_book_new" />
+        tools:layout="@layout/fragment_main_book_new" >
+        <action
+            android:id="@+id/action_mainBookNewFragment_to_mainBookFragment"
+            app:destination="@id/mainBookFragment" />
+    </fragment>
     <fragment
         android:id="@+id/mainBookUserFragment"
         android:name="com.example.MyBook.Fragments.MainBookUserFragment"
