@@ -5,6 +5,11 @@
         app:entries="@array/cat_entries"
         app:entryValues="@array/cat_values"
         app:key="category"
-        app:title="@string/category_title"
+        app:title="Filtro de Categorias default:"
         app:useSimpleSummaryProvider="true" />
+
+    <SwitchPreferenceCompat
+        app:key="orientation"
+        app:title="Orientation:"
+        />
 </PreferenceScreen>

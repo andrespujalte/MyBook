@@ -56,13 +56,17 @@ class MainBookFragment : Fragment() {
         super.onStart()
 
         val prefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
-        var preferencias : String = prefs.getString("category","").toString()
-        if(preferencias != "" && preferencias != "All"){
-            books = bookDao!!.loadBookbyCategory(preferencias) as MutableList<Book>
+        var preferencias_categorias : String = prefs.getString("category","").toString()
+        var preferencias_orientation : Boolean = prefs.getBoolean("orientation",false)
+        if(preferencias_categorias != "" && preferencias_categorias != "All"){
+            books = bookDao!!.loadBookbyCategory(preferencias_categorias) as MutableList<Book>
         }
         else{books = bookDao!!.loadAllBooks() as MutableList<Book>}
         rv_books.setHasFixedSize(true)
-        linearLayoutManager =  LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
+        if(!preferencias_orientation)
+            linearLayoutManager =  LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
+        else
+            linearLayoutManager =  LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
         rv_books.layoutManager = linearLayoutManager
         //bookListAdapter = BooksListAdapter(books){position -> onItemClick(position)}
         bookListAdapter = BooksListAdapter(books,{position -> onItemClick(position)},{position->onLongItemClick(position)})
