@@ -17,7 +17,7 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         this.setTheme(R.style.AppTheme)
         setContentView(R.layout.activity_splash)
-
+        setTheme(R.style.AppTheme)
         val img : ImageView = findViewById<ImageView>(R.id.imageView_splash)
         Glide.with(img.context).load("https://images.qdq.com/uGxYUNcP-vX3-Q4sJZVWEDwor_Q=/310x175/smart/photos/049/049070977/3fb1eea9f75047179abe1f7fd5b579ab.jpg").into(img)
         Handler().postDelayed({

@@ -12,7 +12,7 @@ public interface bookDao {
     @Query("SELECT * FROM book WHERE category = :category ORDER BY idbook")
     fun loadBookbyCategory(category: String): MutableList<Book?>?
 
-    @Query("SELECT MAX(id) AS maxid FROM user")
+    @Query("SELECT MAX(idbook) AS maxid FROM book")
     fun getMaxIndex(): Int?
 
     @Query("DELETE FROM book WHERE idbook = :id")
