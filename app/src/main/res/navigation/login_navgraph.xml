@@ -35,7 +35,10 @@
         android:label="fragment_login_recovery"
         tools:layout="@layout/fragment_login_recovery" >
         <argument
-            android:name="user"
+            android:name="password"
+            app:argType="string" />
+        <argument
+            android:name="email"
             app:argType="string" />
     </fragment>
     <fragment
